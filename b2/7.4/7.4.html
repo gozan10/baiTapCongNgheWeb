@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Hồ Sơ</title>
+    <link rel="stylesheet" href="7.4.css" />
+    <script>
+      function dateIsValid(date) {
+        var isValidDate = Date.parse(date);
+        if (isNaN(isValidDate)) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+      function checkInfo() {
+        var MaSv = document.getElementById("MaSv").value;
+        var HoTen = document.getElementById("HoTen").value;
+        var birth = document.getElementById("birth").value;
+        var Addr = document.getElementById("addr").value;
+        var Lop = document.getElementById("Lop").value;
+        var Diem = document.getElementById("Diem").value;
+        console.log(dateIsValid(new Date("2022-11-20")));
+        // Birth = new Date(birth);
+        if (MaSv.length > 8) {
+          // alert("Mã lớp không hợp lệ");
+          msg = "Mã SV không hợp lệ";
+        } else if (HoTen.length > 50) {
+          // alert("Họ tên không hợp lệ");
+          msg = "Họ tên không hợp lệ";
+        } else if (isNaN(Diem)) {
+          // alert("Tên gvcn không hợp lệ");
+          msg = "Điểm không hợp lệ";
+        } else if (addr.length > 150) {
+          // alert("Tên lớp không hợp lệ");
+          msg = "Địa chỉ không hợp lệ";
+        } else if (Lop.length > 6) {
+          // alert("Tên gvcn không hợp lệ");
+          msg = "Lớp không hợp lệ";
+        }else if (!dateIsValid(birth)&&birth !== "") {
+          msg = "Ngày sinh không hợp lệ";
+        } else {
+          msg = "";
+        }
+        document.getElementById("alert").innerText = msg;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="login-form">
+      <h1>HỒ SƠ SINH VIÊN</h1>
+      <form>
+        <div class="login_box">
+          <input
+            type="text"
+            id="MaSv"
+            name="MaSv"
+            placeholder="Mã sinh viên"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="login_box">
+          <input
+            type="text"
+            id="HoTen"
+            name="HoTen"
+            placeholder="Họ và tên"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="login_box">
+          <input
+            type="text"
+            id="birth"
+            name="birth"
+            placeholder="mm-dd-yy"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="login_box">
+          <input
+            type="text"
+            id="addr"
+            name="addr"
+            placeholder="Địa chỉ"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="login_box">
+          <input
+            type="text"
+            id="Lop"
+            name="Lop"
+            placeholder="Lớp"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="login_box">
+          <input
+            type="text"
+            id="Diem"
+            name="Diem"
+            placeholder="Điểm"
+            onkeyup="checkInfo()"
+            required
+          />
+        </div>
+        <div class="add">
+          <button name="submit" type="submit" onclick="checkInfo()">Add</button>
+        </div>
+        <div id="alert"></div>
+      </form>
+    </div>
+    <div>
+      <table></table>
+    </div>
+  </body>
+</html>

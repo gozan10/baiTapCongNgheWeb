@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head>
+    <TITLE>Form Thông Tin</TITLE>
+	<META http-equiv='Content-Type' content="text/html" charset ="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+</head><body  leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+ <table>
+	<tr>
+		<td valign="top">
+		<table cellspacing="0">
+			<tr>
+				<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);"  onclick="javascript:avoid(this);" title="Quản lý những thông tin liên quan đến sinh viên
+">&raquo; Quản lý sinh viên (Đăng ký thông tin sinh viên)
+</td></tr>
+			<tr>
+				<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);" onclick="javascript:avoid(this);" title="Phân quyền theo từng nhiệm vụ">&raquo; Phân quyền</td></tr>
+			<tr>
+				<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);"  onclick="javascript:avoid(this);" title="Cổng thông tin đào tạo và người học
+">&raquo; Đào tạo
+</td></tr>
+			<tr>
+				<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);"  onclick="javascript:avoid(this);" title="Quản lý văn bản và hồ sơ công việc của sinh viên
+">&raquo; Quản lý văn bản và hồ sơ 
+</td></tr>
+				<tr>
+					<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);" onclick="javascript:avoid(this);" title="Đóng học phí">&raquo; Nộp học</td></tr>
+				<tr>
+					<td class="portalModTd" onMouseOver="javascript:tdMouseOver(this);" onMouseOut="javascript:tdMouseOut(this);"  onclick="javascript:avoid(this);" title="Hệ thống  thông tin hỗ trợ liên hệ Hoangpv
+">&raquo; Hệ thống  thông tin
+</td></tr>
+			</table>
+		</td>
+		<td id="content" valign="top">
+		</td>
+	</table>
+	<script type="text/javascript">
+		sel_ = null;
+		function avoid(r) {
+			if (sel_ != null) {
+				sel_.className = "portalModTd";
+			}
+			sel_ = r;
+			sel_.className = "portalModTdSelected";
+			document.getElementById("content").innerHTML = sel_.innerHTML;
+		}
+
+		function tdMouseOver(r) {
+			if (r != sel_)	{
+				r.className='portalModTdHover';
+			}
+		}
+
+		function tdMouseOut(r) {
+			if (r != sel_) {
+				r.className='portalModTd';
+			}
+		}
+	</script>
+</body></html>
