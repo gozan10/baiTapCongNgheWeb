@@ -1,0 +1,7 @@
+.text-hello {
+  animation-name: example;
+  animation-duration: 4s;
+  width: fit-content;
+  position: relative;
+  animation-iteration-count: infinite;
+}
